@@ -16,9 +16,15 @@ const productController = {
   async getProducts(req , res) {
     let allProducts = await Product.find();
     return res.status(200).json(allProducts);
-  }
+  },
 
+  async getProduct(req , res) {
+    const product = await Product.findOne({_id:req.params.id})
+    console.log(product)
+    res.send(product);
+  }
 }
+
 
 
 module.exports = productController;

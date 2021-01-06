@@ -5,6 +5,6 @@ const productController = require('../controllers/productController');
 productRouter.get('/seed', productController.seedProducts);
 
 productRouter.get('/', productController.getProducts);
-// productRouter.get('/:id', productController.getProduct);
+productRouter.get('/:id', productController.getProduct);
 
 module.exports = productRouter;

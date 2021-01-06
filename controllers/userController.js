@@ -39,13 +39,9 @@ const userController = {
         const token = generateToken(user);
         return res.send( {user, token} );
       }
-      else{
-       return  res.send("wrong password");
-      }
     }
-    else{
-      return  res.send("wrong email");
-    }
+    console.log("invalid username or password");
+    return  res.status(401).send({ message : "invalid username or password"});
   }
 
 }
